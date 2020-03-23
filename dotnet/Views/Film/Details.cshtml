@@ -1,0 +1,11 @@
+﻿@model dotnet.Models.Film
+
+@{
+    ViewBag.Title = @Model.Name;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="film-name">@Model.Name</h1>
+<p class="film-genre">Genre: @Model.Genre.Name</p>
+<p class="film-download"><a href="@Model.Link">Download</a></p>
+<p class="film-description">@Model.Description</p>

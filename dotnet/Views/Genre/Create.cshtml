@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Create Genre";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model dotnet.Models.Genre
+
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Name, "Name")
+    @Html.EditorFor(model => model.Name)
+    <input type="submit" value="Create" />
+}

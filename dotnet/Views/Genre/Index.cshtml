@@ -1,0 +1,28 @@
+﻿@model IEnumerable<dotnet.Models.Genre>
+
+@{
+    ViewBag.Title = "Genre list";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>@Html.ActionLink("Create", "Create")</p><br/>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Operations</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+</table>

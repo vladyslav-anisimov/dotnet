@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="film-container">
+    @foreach (var f in ViewBag.Films)
+    {
+    <div class="film">
+        <div class="film-info">
+            <p>@f.Name</p>
+            <p>Genre: @f.Genre.Name</p>
+            @if (Session["UserId"] != null)
+            {
+                <br/>
+                <p><a href="/Film/Details/@f.Id">Details</a></p>
+            }
+            </div>
+    </div>
+    }
+</div>

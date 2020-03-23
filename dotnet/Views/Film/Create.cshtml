@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Create Film";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model dotnet.Models.Film
+
+@using (Html.BeginForm())
+{
+    <div>
+        @Html.LabelFor(m => m.Name, "Name")
+        @Html.EditorFor(model => model.Name)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Description, "Description")
+        @Html.TextAreaFor(model => model.Description)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Link, "Link")
+        @Html.EditorFor(model => model.Link)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.GenreId, "Genres")
+        @Html.DropDownListFor(model => model.GenreId, ViewBag.Genres as SelectList)
+    </div>
+    <input type="submit" value="Create" />
+}
